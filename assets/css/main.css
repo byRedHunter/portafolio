@@ -59,7 +59,6 @@ body {
 	background: var(--color-dark-hover);
 	color: var(--color-light);
 	font-weight: var(--font-200);
-	min-width: 375px;
 }
 
 img {
