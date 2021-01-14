@@ -8,6 +8,7 @@
 
 html {
 	font-size: 62.5%;
+	scroll-behavior: smooth;
 }
 
 :root {
@@ -78,6 +79,27 @@ ul {
 
 main {
 	padding: 1rem;
+}
+
+.title {
+	display: flex;
+	align-items: center;
+	column-gap: 0.5rem;
+	margin-top: 4rem;
+	margin-bottom: 2rem;
+}
+.title span {
+	color: var(--color-secondary);
+	font-size: 3.5rem;
+}
+
+.enlace {
+	color: var(--color-secondary);
+	font-weight: var(--font-400);
+	transition: 0.3s linear;
+}
+.enlace:hover {
+	text-decoration: underline;
 }
 
 .button {
@@ -153,6 +175,7 @@ main {
 	transition: 0.3s ease-in;
 	clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
 	transform-origin: left center;
+	z-index: 5;
 }
 .header.active {
 	clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
@@ -201,7 +224,7 @@ main {
 	width: 4.2rem;
 	background: var(--color-primary);
 	border-radius: 50%;
-	box-shadow: 0 0 1rem 0 var(--color-light-50);
+	box-shadow: 0 0 1rem 0 var(--color-primary-light);
 }
 .header__social--item a {
 	height: 100%;
@@ -240,6 +263,9 @@ main {
 /* header */
 
 /* presentacion */
+.presentation {
+	position: relative;
+}
 .presentation__title {
 	font-size: 3.3rem;
 	margin-bottom: 0.5rem;
@@ -251,6 +277,15 @@ main {
 	margin-bottom: 2rem;
 	text-transform: uppercase;
 	font-size: 1.7rem;
+}
+.presentation__portada {
+	margin-top: -4rem;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 2rem;
+}
+.presentation__portada img {
+	height: 30rem;
 }
 .presentation__description {
 	margin-bottom: 3rem;
@@ -272,6 +307,79 @@ main {
 }
 /* presentacion */
 
+/* about */
+.about__description a {
+	color: var(--color-secondary);
+}
+/* about */
+
+/* skills */
+section.skills {
+	padding: 0;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 4rem;
+	row-gap: 4rem;
+}
+.skill {
+	width: 100%;
+}
+.skill__images {
+	display: flex;
+	align-items: center;
+	column-gap: 2rem;
+}
+.skill__images svg {
+	height: 4rem;
+}
+.skill__images svg.express-logo {
+	height: 3.5rem;
+}
+.skill__images svg.mysql-logo {
+	filter: drop-shadow(0 0 0.3rem var(--color-primary-light));
+}
+.skill__titles {
+	margin: 1rem 0;
+}
+.skill__description span {
+	font-weight: var(--font-400);
+}
+.skill__description span.sass {
+	color: #bf6b97;
+}
+.skill__description span.bootstrap {
+	color: #563d7c;
+}
+.skill__description span.react {
+	color: #62d4fa;
+}
+/* skills */
+
+/* feature */
+.feature__list {
+	margin-top: 4rem;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 2rem;
+}
+.feature__list--item {
+	position: relative;
+	padding-left: 3rem;
+	display: flex;
+	align-items: center;
+}
+.feature__list--item::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	height: 2rem;
+	width: 2rem;
+	border-radius: 0.3rem;
+	background: var(--color-secondary);
+}
+/* feature */
+
 @media screen and (min-width: 500px) {
 	section {
 		padding: 3rem;
@@ -290,6 +398,42 @@ main {
 		column-gap: 4rem;
 	}
 	/* presentacion */
+
+	/* feature */
+	.feature__list {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	/* feature */
+}
+
+@media screen and (min-width: 600px) {
+	/* skills */
+	.skills {
+		justify-content: space-between;
+	}
+	.skill {
+		width: 48%;
+	}
+	/* skills */
+}
+
+@media screen and (min-width: 700px) {
+	/* presentation */
+	.presentation__portada {
+		position: absolute;
+		right: 0;
+		bottom: 4rem;
+	}
+	.presentation__description {
+		width: 70%;
+	}
+	/* presentation */
+
+	/* skills */
+	.skill {
+		width: 47%;
+	}
+	/* skills */
 }
 
 @media screen and (min-width: 900px) {
@@ -363,10 +507,40 @@ main {
 		margin-left: 32rem;
 	}
 	/* main */
+
+	/* presentation */
+	.presentation__description {
+		width: 65%;
+	}
+	/* presentation */
 }
 
 @media screen and (min-width: 1000px) {
 	section {
 		padding: 4.5rem;
 	}
+
+	/* presentation */
+	.presentation__portada {
+		bottom: 2rem;
+	}
+	.presentation__portada img {
+		height: 35rem;
+		filter: drop-shadow(0 0 2rem var(--color-dark));
+	}
+	/* presentation */
+}
+
+@media screen and (min-width: 1200px) {
+	/* presentation */
+	.presentation__description {
+		width: 70%;
+	}
+	/* presentation */
+
+	/* feature */
+	.feature__list {
+		grid-template-columns: repeat(3, 1fr);
+	}
+	/* feature */
 }
