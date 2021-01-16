@@ -429,6 +429,8 @@ section.skills {
 	color: #000;
 	font-weight: var(--font-500);
 	text-shadow: 0 0 0.3rem var(--color-dark-hover);
+	transition: .3s linear;
+	transform-origin: top left;
 }
 .filtro__container--item.active::before {
 	content: '';
@@ -445,6 +447,21 @@ section.skills {
 	height: 30rem;
 	overflow: hidden;
 	border-radius: 1rem;
+	animation: showWork linear 1s;
+	transform-origin: center;
+}
+@keyframes showWork {
+	from {
+		opacity: 0;
+		transform: scale(0);
+	}
+	85% {
+		transform: scale(1.1);
+	}
+	to {
+		
+		opacity: 1;
+	}
 }
 .work:hover .work__image img {
 	transform: scale(1.5) rotate(25deg);
@@ -752,6 +769,12 @@ section.skills {
 	border-radius: 0.8rem;
 	display: grid;
 	grid-template: 1fr / 10rem 1fr;
+	transition: linear .3s;
+	transform-origin: center;
+}
+.video:hover {
+	box-shadow: 0 0 1rem 0 var(--color-primary-light);
+	transform: translate(1%, -2%);
 }
 .video__image {
 	width: 100%;
@@ -787,6 +810,13 @@ section.skills {
 /* contact */
 .contact .header__social {
 	margin-top: 6rem;
+}
+.contact .header__social li {
+	transform-origin: center;
+	transition: .2s linear;
+}
+	.contact .header__social li:hover {
+	transform: scale(1.2);
 }
 .contact__info {
 	width: 100%;
