@@ -278,6 +278,9 @@ p span {
 	font-weight: var(--font-500);
 	transition: 0.3s linear;
 }
+.header__nav--item a img {
+	height: 3rem;
+}
 .header__nav--item a:hover img {
 	transform: scale(1.2);
 }
