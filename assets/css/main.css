@@ -432,7 +432,7 @@ section.skills {
 	color: #000;
 	font-weight: var(--font-500);
 	text-shadow: 0 0 0.3rem var(--color-dark-hover);
-	transition: .3s linear;
+	transition: 0.3s linear;
 	transform-origin: top left;
 }
 .filtro__container--item.active::before {
@@ -450,8 +450,21 @@ section.skills {
 	height: 30rem;
 	overflow: hidden;
 	border-radius: 1rem;
+	-webkit-animation: showWork linear 1s;
 	animation: showWork linear 1s;
 	transform-origin: center;
+}
+@-webkit-keyframes showWork {
+	from {
+		opacity: 0;
+		transform: scale(0);
+	}
+	85% {
+		transform: scale(1.1);
+	}
+	to {
+		opacity: 1;
+	}
 }
 @keyframes showWork {
 	from {
@@ -462,7 +475,6 @@ section.skills {
 		transform: scale(1.1);
 	}
 	to {
-		
 		opacity: 1;
 	}
 }
@@ -636,6 +648,7 @@ section.skills {
 .info__header--perfil img {
 	height: 100%;
 	width: 100%;
+	-o-object-fit: cover;
 	object-fit: cover;
 }
 .info__header--name {
@@ -656,6 +669,7 @@ section.skills {
 	font-size: 1.2rem;
 	font-weight: var(--font-300);
 	color: #000;
+	-moz-column-gap: 1rem;
 	column-gap: 1rem;
 }
 .info__content--item svg {
@@ -744,6 +758,7 @@ section.skills {
 .formation__header {
 	display: flex;
 	margin-bottom: 1rem;
+	-moz-column-gap: 1rem;
 	column-gap: 1rem;
 	align-items: center;
 }
@@ -772,7 +787,7 @@ section.skills {
 	border-radius: 0.8rem;
 	display: grid;
 	grid-template: 1fr / 10rem 1fr;
-	transition: linear .3s;
+	transition: linear 0.3s;
 	transform-origin: center;
 }
 .video:hover {
@@ -784,6 +799,7 @@ section.skills {
 	height: 100%;
 }
 .video__image img {
+	-o-object-fit: cover;
 	object-fit: cover;
 	height: 100%;
 	width: 100%;
@@ -816,9 +832,9 @@ section.skills {
 }
 .contact .header__social li {
 	transform-origin: center;
-	transition: .2s linear;
+	transition: 0.2s linear;
 }
-	.contact .header__social li:hover {
+.contact .header__social li:hover {
 	transform: scale(1.2);
 }
 .contact__info {
@@ -975,6 +991,7 @@ section.skills {
 
 	/* contact */
 	.contact .header__social {
+		-moz-column-gap: 4rem;
 		column-gap: 4rem;
 	}
 	/* contact */
@@ -1195,7 +1212,8 @@ section.skills {
 		padding-right: 3rem;
 	}
 	.info__content {
-    align-items: flex-start;
-    padding-left: 3rem;
-	/* resumen */
+		align-items: flex-start;
+		padding-left: 3rem;
+		/* resumen */
+	}
 }
